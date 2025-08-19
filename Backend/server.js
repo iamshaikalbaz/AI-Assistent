@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://ai-assistant-60a0.onrender.com",
     credentials: true
 }))
 app.use(express.json()); // ✅ parse JSON body
