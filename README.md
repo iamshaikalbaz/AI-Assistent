@@ -42,11 +42,6 @@ This assistant can process user commands, provide smart responses, and deliver a
 🤖 Google Gemini / OpenAI API (customizable)
 
 
-## ⚙️ Installation & Setup
-## 1️⃣ Clone the Repository
-git clone https://github.com/your-username/ai-virtual-assistant.git
-cd ai-virtual-assistant
-
 ## 2️⃣ Backend Setup
 cd Backend
 npm install
