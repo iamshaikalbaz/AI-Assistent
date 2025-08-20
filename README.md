@@ -41,54 +41,6 @@ This assistant can process user commands, provide smart responses, and deliver a
 
 🤖 Google Gemini / OpenAI API (customizable)
 
-## 📂 Project Structure
-Ai-Assistant/
-│
-├── Backend/ # Backend (Node + Express)
-│ ├── config/
-│ │ ├── cloudinary.js # Cloudinary configuration
-│ │ ├── db.js # MongoDB connection
-│ │ └── token.js # JWT token utilities
-│ │
-│ ├── controllers/
-│ │ ├── auth.js # Auth logic (signup/login)
-│ │ └── user.js # User profile & data handling
-│ │
-│ ├── middlewares/
-│ │ ├── isAuth.js # Auth middleware
-│ │ └── multer.js # Multer config for file uploads
-│ │
-│ ├── models/
-│ │ └── user.js # User schema
-│ │
-│ ├── routes/
-│ │ ├── auth.js # Auth routes
-│ │ └── user.js # User routes
-│ │
-│ ├── gemini.js # Gemini AI API integration
-│ └── server.js # Express server entry
-│
-├── Frontend/ # Frontend (React + Vite)
-│ ├── src/
-│ │ ├── assets/ # Images, icons, etc.
-│ │ ├── components/
-│ │ │ └── card.jsx # Reusable card component
-│ │ ├── context/
-│ │ │ └── UserContext.jsx # Context for global user data
-│ │ ├── pages/ # Main pages
-│ │ │ ├── customize.js # Assistant customization page
-│ │ │ ├── customize2.jsx # Additional customization
-│ │ │ ├── header.jsx # Header UI
-│ │ │ ├── home.jsx # Home page
-│ │ │ ├── signin.jsx # Sign-in page
-│ │ │ └── signup.jsx # Sign-up page
-│ │ ├── App.jsx
-│ │ ├── index.css
-│ │ └── main.jsx
-│ └── index.html
-│
-└── README.md
-
 
 ## ⚙️ Installation & Setup
 ## 1️⃣ Clone the Repository
