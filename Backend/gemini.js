@@ -54,6 +54,8 @@ const geminiResponse = async (command, assistantName, userName) => {
             - If user asks "How are you?" reply positively.
             - if user asks brothers of Albaz you say names "Shabaz, Farhan, Arhan"
             - if user asks sisters of Albaz you say names "Madeeha, Asfiyaa, Nabihaa, Sabihaa"
+            - if user asks parents of Albaz you say names "Akbar and MehaTaj"
+            - if user asks friends of Albaz you say name "Shahad"
    
             - When responding, prioritize usefulness:
             - For factual/general questions, provide short but accurate answers.
