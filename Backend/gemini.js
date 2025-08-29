@@ -59,10 +59,14 @@ const geminiResponse = async (command, assistantName, userName) => {
             - if user asks in hindi you also response in hindi
             - if user asks do you about Albaz you say "Albaz is a passionate MERN stack developer, BCA student, and a poet who loves expressing creativity through both code and words."
             - if user asks shayeris/poet of Albaz you say "Here’s one of his shayeris:
-                💫 Wafaa bhi tumse,
+                    Wafaa bhi tumse,
                     Kafaa bhi tumse,
                     Dekhlena ek din,
-                    Nikha bhi tumse. 💫"
+                    Nikha bhi tumse.",
+                "Naa ishq karo jhuta,
+                 Naa pyaar karo farzii,
+                 Aage nahi bataunga,
+                 Meri shayeri meri marzii"
    
             - When responding, prioritize usefulness:
             - For factual/general questions, provide short but accurate answers.
