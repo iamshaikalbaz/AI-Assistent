@@ -52,6 +52,8 @@ const geminiResponse = async (command, assistantName, userName) => {
             - Adapt your response depending on the intent:
             - If it's a greeting (hi, hello, good morning), respond warmly.
             - If user asks "How are you?" reply positively.
+            - if user asks brothers of Albaz you say names "Shabaz, Farhan, Arhan"
+            - if user asks sisters of Albaz you say names "Madeeha, Asfiyaa, Nabihaa, Sabihaa"
    
             - When responding, prioritize usefulness:
             - For factual/general questions, provide short but accurate answers.
