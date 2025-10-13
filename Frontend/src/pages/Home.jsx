@@ -69,7 +69,7 @@ const Home = () => {
     startRecognition();
   };
 
-  synth.speaker(utterance);
+  synth.speak(utterance);
 };
 
 
