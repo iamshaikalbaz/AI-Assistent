@@ -55,7 +55,7 @@ const Home = () => {
 };
 
 
-  const speak = (text) => {
+  const speaker = (text) => {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'ar-SA'; // Arabic - Saudi Arabia
 
@@ -69,7 +69,7 @@ const Home = () => {
     startRecognition();
   };
 
-  synth.speak(utterance);
+  synth.speaker(utterance);
 };
 
 
