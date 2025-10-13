@@ -73,6 +73,13 @@ const Home = () => {
 };
 
 
+  useEffect(() => {
+  window.speechSynthesis.onvoiceschanged = () => {
+    console.log('Available voices:', window.speechSynthesis.getVoices());
+  };
+}, []);
+
+
 
 
   // Handle commands
