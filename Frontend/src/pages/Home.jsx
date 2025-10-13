@@ -34,25 +34,28 @@ const Home = () => {
     }
   };
 
-  // Speak function
-  const speak = (text) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'hi-IN';
+ const speak = (text, lang = 'hi-IN') => {
+  const synth = window.speechSynthesis;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = lang;
 
-    const voice = synth.getVoices().find(v => v.lang === 'hi-IN');
-    if (voice) utterance.voice = voice;
+  const voice = synth.getVoices().find(v => v.lang.startsWith(lang.split('-')[0]));
+  if (voice) utterance.voice = voice;
 
-    isSpeakingRef.current = true;
-
-    utterance.onend = () => {
-      isSpeakingRef.current = false;
-      setUserText('');
-      setAiText('');
-      startRecognition();
-    };
-
-    synth.speak(utterance);
+  utterance.onend = () => {
+    setUserText('');
+    setAiText('');
+    startRecognition();
   };
+
+  synth.speak(utterance);
+};
+
+// 👉 Example usage:
+speak("مرحبا كيف حالك؟", "ar-SA"); // Arabic
+speak("नमस्ते आप कैसे हैं?", "hi-IN"); // Hindi
+speak("Hello, how are you?", "en-US"); // English
+
 
 
   // Handle commands
