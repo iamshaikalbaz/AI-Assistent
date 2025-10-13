@@ -56,21 +56,42 @@ const Home = () => {
 
 
   const speaker = (text) => {
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'ar-SA'; // Arabic - Saudi Arabia
-
   const synth = window.speechSynthesis;
-  const voice = synth.getVoices().find(v => v.lang.startsWith('ar'));
-  if (voice) utterance.voice = voice;
+  let voices = synth.getVoices();
+  const hasArabicVoice = voices.some(v => v.lang.startsWith('ar'));
 
-  utterance.onend = () => {
-    setUserText('');
-    setAiText('');
-    startRecognition();
-  };
+  // ✅ If Arabic voice available → use normal speech synthesis
+  if (hasArabicVoice) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ar-SA';
+    const voice = voices.find(v => v.lang.startsWith('ar'));
+    if (voice) utterance.voice = voice;
 
-  synth.speak(utterance);
+    utterance.onend = () => {
+      setUserText('');
+      setAiText('');
+      startRecognition();
+    };
+
+    synth.speak(utterance);
+  } 
+  // 🔁 Else → use Google Translate Arabic voice as fallback
+  else {
+    const audio = new Audio(
+      `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${encodeURIComponent(
+        text
+      )}&tl=ar`
+    );
+    audio.play();
+
+    audio.onended = () => {
+      setUserText('');
+      setAiText('');
+      startRecognition();
+    };
+  }
 };
+
 
 
   useEffect(() => {
