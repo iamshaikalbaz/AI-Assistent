@@ -34,12 +34,33 @@ const Home = () => {
     }
   };
 
- const speak = (text, lang = 'hi-IN') => {
-  const synth = window.speechSynthesis;
+  // Speak function
+  const speak = (text) => {
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
+  utterance.lang = 'hi-IN';
 
-  const voice = synth.getVoices().find(v => v.lang.startsWith(lang.split('-')[0]));
+  const voice = synth.getVoices().find(v => v.lang === 'hi-IN');
+  if (voice) utterance.voice = voice;
+
+  isSpeakingRef.current = true;
+
+  utterance.onend = () => {
+    isSpeakingRef.current = false;
+    setUserText('');
+    setAiText('');
+    startRecognition();
+  };
+
+  synth.speak(utterance);
+};
+
+
+  const speak = (text) => {
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ar-SA'; // Arabic - Saudi Arabia
+
+  const synth = window.speechSynthesis;
+  const voice = synth.getVoices().find(v => v.lang.startsWith('ar'));
   if (voice) utterance.voice = voice;
 
   utterance.onend = () => {
@@ -51,10 +72,6 @@ const Home = () => {
   synth.speak(utterance);
 };
 
-// 👉 Example usage:
-speak("مرحبا كيف حالك؟", "ar-SA"); // Arabic
-speak("नमस्ते आप कैसे हैं?", "hi-IN"); // Hindi
-speak("Hello, how are you?", "en-US"); // English
 
 
 
