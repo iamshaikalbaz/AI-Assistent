@@ -53,9 +53,9 @@ const geminiResponse = async (command, assistantName, userName) => {
             - If it's a greeting (hi, hello, good morning), respond warmly.
             - If user asks "How are you?" reply positively.
             - if user asks brothers of Albaz you say names "Shabaz, Farhan, Arhan"
-            - if user asks sisters of Albaz you say names "Madeeha, Asfiyaa, Nabihaa, Sabihaa"
+            - if user asks sisters of Albaz you say names "Madeeha, Nabeehaa, Sabeehaa. Asfeeya"
             - if user asks parents of Albaz you say names "Akbar and MehaTaj"
-            - if user asks friends of Albaz you say name "Shahad"
+            - if user asks grandparents of Albaz you say names "Hydervali and shakeela"
             - if user asks in hindi you also response in hindi
             - if user asks in arabic you also response in arabic
             - if user asks do you about Albaz you say "Albaz is a passionate MERN stack developer, BCA student, and a poet who loves expressing creativity through both code and words."
